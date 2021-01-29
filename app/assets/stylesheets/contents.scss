@@ -1,0 +1,196 @@
+// Place all the styles related to the Contents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.content {
+  display: grid;
+  grid-template-columns: 67% auto ;
+  grid-template-areas:"section article";
+  margin: 0;
+}
+
+.insert_image {
+  grid-area: section;
+  background-image: url(girl_photo.jpg);
+  height: 100%;
+}
+
+h1, h2 {
+  margin-top: 40px;
+  margin-bottom: 0; 
+  color: #5e656b;
+  line-height: 0.5;   
+  text-align: center;
+}
+
+hr {
+  width: 60%;
+  color: #343a40;
+  margin-bottom: 40px;
+}
+
+.alphabet, .add_content {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  padding-right: 5px;
+}
+
+td a {
+  margin-right: 50px;
+}
+
+td a, .alphabet a, .add_content a{
+  text-decoration: none;
+  color: #454c53;
+}
+
+td a:hover, .alphabet a:hover, .add_content a:hover {
+  color: #c0604f;
+}
+
+.button_to {
+  box-shadow: 0px 0px 0px 1px #5e656b;
+  background-color: rgb(243, 235, 225);
+  border-radius: 8px;
+  border: 1px solid #454c53;
+  font-size: 0.8em;
+  margin-top: 5px;
+  padding: 3px 3px;
+  color: #454c53;
+}
+
+/*------------- form start -------------------*/
+.form {
+  padding: 12px 12px 12px 0;
+  color: #5e656b;
+  text-align: center;
+}
+
+.form input[type=text] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.form input[type=submit] {
+  background-color: #5e656b;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+.form input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+#recipe_cooking_method {
+  border: 1px solid #ccc;
+}
+/*------------- form end -------------------*/
+
+/*------------- dishes start -------------------*/
+.body_dish, .main_recipe {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.nav_dish a, .dish_image a, .nav_recipe a {
+  text-decoration: none;
+  color:#5c3f3a;
+}
+
+.main_dish {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.dish_image {
+  background-color: rgb(255, 252, 242);
+  padding: 15px;
+  border: 1px solid  rgb(204, 180, 147);
+  border-radius: 10px;
+  text-align: center;
+  margin: 5px;
+}
+
+.dish_image a {
+  font-size: 0.8rem;
+}
+
+.dish_image img {
+  margin-top: 5px;
+}
+
+.dish_image img:hover {
+  opacity: 0.7;
+}
+
+.name {
+  text-align: center;
+ }
+
+.dish_title {
+  margin: 10px 20px 5px 20px;
+  background-color:rgb(253, 239, 218);
+  border-bottom: 1px solid rgb(204, 180, 147);
+  border-radius: 3px; 
+}
+
+.dish_title a {
+  text-decoration: none;
+  color:#be290e;
+  font: 1em/1.5 Arial, Verdana, Tahoma, sans-serif;
+}
+
+.dish_title a:hover {
+  color:#ff4726;
+}
+ 
+.nav_dish, .footer_recipe, .nav_recipe {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 30px 30px;
+}
+/*------------- dishes end -------------------*/
+
+/*------------- recipe start -------------------*/
+.body_recipe {
+  display: grid;
+  grid-template-rows: 80px 100px auto 170px;
+  grid-template-areas: "title"
+                       "nav"
+                       "main"
+                       "footer";                 
+}
+
+.main_recipe {
+  display: grid;
+  grid-template-columns: 2fr, auto;
+  grid-template-areas: "article section";  
+  grid-gap: 40px;
+}
+
+.h_recipe {
+  text-align: center;
+}
+  
+.table_recipe {
+  text-align: left;
+}
+
+.footer_recipe a {
+  text-decoration: none;
+  color: #c21e34;
+}
+
+/*------------- recipe end -------------------*/

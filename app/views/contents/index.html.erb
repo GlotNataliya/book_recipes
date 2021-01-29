@@ -1,0 +1,21 @@
+<body class="content">
+<section class="insert_image">
+</section>
+<article class="container">
+<h1>Оглавление</h1>
+<hr>
+ <div class="alphabet">
+ <%= link_to "по алфавиту", contents_path(sort_by: "title") %> |
+ <%= link_to "не по алфавиту", contents_path %>
+ </div>
+<table>
+  <% @contents.each do |content| %>
+    <tr>
+      <td><%= link_to content.title, [content], class: "name" %></td>
+      <td><%= button_to 'Edit', [:edit, content], method: 'get' %></td>
+      <td><%= button_to 'Remove', [content], method: 'delete', data: { confirm: 'Вы уверены, что хотите удалить этот элемент?'} %></td>
+    </tr>
+  <% end %>
+</table>
+<div class="add_content"><%= link_to "Добавить в оглавление", new_content_path %></div>
+</article>

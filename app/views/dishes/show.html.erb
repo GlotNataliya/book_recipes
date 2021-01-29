@@ -1,0 +1,30 @@
+<body class = "body_recipe">
+
+<h2><%= @dish.title %></h2>
+<nav class = "nav_recipe">
+<%= link_to 'Назад', content_path(@content) %>
+<%= link_to "Новый рецепт", new_content_dish_recipe_path(@content, @dish, @dish.recipe) %>
+</nav>
+<main class = "main_recipe">
+<% if @dish.recipe != nil %>
+<article class = "article_recipe">
+<h3 class = "h_recipe">Ингредиенты</h3>
+<hr>
+<table class = "table_recipe">
+  <tr>
+    <th><%= sanitize @dish.recipe.ingredients.gsub(",", "<br>") %></th>
+  </tr>
+</table>
+</article>
+<section class = "section_recipe">
+<h3 class = "h_recipe">Инструкция приготовления</h3>
+<hr>
+<%= @dish.recipe.cooking_method %>
+</section>
+<% end %>
+</main>
+<footer class = "footer_recipe">
+<%= link_to 'Исправить', edit_content_dish_recipe_path(@content, @dish, @dish.recipe) %>
+<%= link_to 'Удалить', content_dish_recipe_path(@content, @dish, @dish.recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+</footer>
+</body>

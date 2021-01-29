@@ -1,0 +1,17 @@
+<div class = "form">
+  <%= form_with model: [@content, @dish], html: { multipart: true }, local: true do |f| %>
+    <p>
+      <%= f.label :Название %>:
+      <%= f.text_field :title, placeholder: "текст", autofocus: true %>
+    </p>
+    <p>
+      <%= f.file_field :image %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</div>
+
+
+

@@ -1,21 +1,19 @@
-<body class = "body_dish">
-<h2><%= @content.title %></h2>
-<nav class = "nav_dish">
-<%= link_to 'Назад', contents_path %>
-<%= link_to "Добавить блюдо", new_content_dish_path(@content) %>
-</nav>
-<main class = "main_dish">
-<% @content.dishes.each do |dish| %>
-<figure class = "dish_image">
-<%= link_to(image_tag(dish.image.url), content_dish_path(@content, dish)) if dish.image.exists? %>
-<%= link_to 'Исправить', edit_content_dish_path(@content, dish) %> |
-<%= link_to 'Удалить', content_dish_path(@content, dish), method: :delete, data: { confirm: 'Are you sure?' } %> 
-<figcaption class = "dish_title">
-<%= link_to dish.title, content_dish_path(@content, dish), class: "name" %>
-</figcaption>
-</figure>
-<% end %>
-</main>
+<body class="dish-content">
+  <h2 class="dish-title"><%= @content.title %></h2>
+  <nav class="dish-nav">
+    <%= link_to '<< Назад', contents_path, class: "callback_link" %>
+    <%= link_to "+ Добавить рецепт", new_content_dish_path(@content), class: "callback_link" %>
+  </nav>
+  <main class="dish-main">
+    <% @content.dishes.each do |dish| %>
+    <figure class="dish-image">
+      <%= link_to(image_tag( dish.image.url, class: "dish-image_link"), content_dish_path(@content, dish)) if dish.image.exists? %></br>
+      <%= link_to 'Исправить', edit_content_dish_path(@content, dish) %> |
+      <%= link_to 'Удалить', content_dish_path(@content, dish), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <figcaption class="dish-name">
+        <%= link_to dish.title, content_dish_path(@content, dish) %>
+      </figcaption>
+    </figure>
+    <% end %>
+  </main>
 </body>
-
-

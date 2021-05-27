@@ -1,0 +1,56 @@
+.form {
+  padding: 12px 12px 12px 0;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.form input[type=text] {
+  border-radius: 3px;
+  width: 15%;
+  height: 45px;
+  margin-bottom: 17px;
+  margin-left: 5px;
+  border: solid 1px var(--border-color);
+  outline: none;
+}
+
+.form input[type=text],
+.form-text {
+  background-color: transparent;
+}
+
+.form input[type=text]:hover,
+.form-text:hover {
+  background-color: var(--form-field-color);
+}
+
+.form input[type=submit] {
+  font-size: 1em;
+  line-height: 2.5em;
+  padding: 2px 4em;
+  margin-top: 20px;
+}
+
+.form-field {
+  background-color: var(--background-field-color);
+  color: var(--text-shadow-color);
+  padding: 0.5em 2em;
+}
+
+.form-text {
+  margin-top: 15px;
+  border-radius: 6px;
+  border: solid 1px var(--border-color);
+}
+
+.form-text:focus,
+.form input[type=text]:focus {
+  outline: none !important;
+  border: 1px solid var(--form-text-border-color);
+  box-shadow: 0 0 10px var(--form-text-border-color);
+}
+
+.message {
+  list-style-type: none;
+}

@@ -4,193 +4,130 @@
 
 .content {
   display: grid;
-  grid-template-columns: 67% auto ;
-  grid-template-areas:"section article";
+  grid-template-areas: "section article";
+  grid-template-columns: 52% auto;
+  grid-template-rows: 100vh;
   margin: 0;
 }
 
-.insert_image {
+.insert-image {
   grid-area: section;
-  background-image: url(girl_photo.jpg);
-  height: 100%;
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
 }
 
-h1, h2 {
+.content-title,
+.dish-title,
+.recipe-title,
+.form-title {
+  font-size: 42px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 42px;
   margin-top: 40px;
-  margin-bottom: 0; 
-  color: #5e656b;
-  line-height: 0.5;   
+  margin-bottom: 0;
+  color: var(--text-color);
   text-align: center;
 }
 
-hr {
+.hr {
   width: 60%;
-  color: #343a40;
+  color: var(--text-color);
   margin-bottom: 40px;
 }
 
-.alphabet, .add_content {
+.alphabet,
+.add_content {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 30px;
 }
 
-table {
+.alphabet {
+  font-size: 1.3em;
+}
+
+.content-name,
+.form-name {
+  font-size: 1.8em;
+}
+
+.content-add {
+  font-size: 1.6em;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.content-table {
   margin-left: auto;
   margin-right: auto;
 }
 
-td {
+.content-table-title {
   padding-right: 5px;
 }
 
-td a {
-  margin-right: 50px;
+.content-table-title a {
+  margin-right: 180px;
 }
 
-td a, .alphabet a, .add_content a{
+.content-table-title a,
+.dish-nav a,
+.recipe-nav a,
+.alphabet a,
+.content-add a,
+.dish-image a {
   text-decoration: none;
-  color: #454c53;
+  color: var(--table-color);
 }
 
-td a:hover, .alphabet a:hover, .add_content a:hover {
-  color: #c0604f;
+.content-table-title a:hover,
+.alphabet a:hover,
+.content-add a:hover,
+.dish-image a:hover,
+.callback_link:hover,
+.form-field:hover {
+  color: var(--table-hover-color);
 }
 
-.button_to {
-  box-shadow: 0px 0px 0px 1px #5e656b;
-  background-color: rgb(243, 235, 225);
-  border-radius: 8px;
-  border: 1px solid #454c53;
-  font-size: 0.8em;
-  margin-top: 5px;
-  padding: 3px 3px;
-  color: #454c53;
+.content-button {
+  font-size: 12px;
+  line-height: 2em;
+  padding: 1px 1.2em;
 }
 
-/*------------- form start -------------------*/
-.form {
-  padding: 12px 12px 12px 0;
-  color: #5e656b;
-  text-align: center;
-}
-
-.form input[type=text] {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-left: 5px;
-}
-
+.content-button,
 .form input[type=submit] {
-  background-color: #5e656b;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 4px;
-}
-
-.form input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-#recipe_cooking_method {
-  border: 1px solid #ccc;
-}
-/*------------- form end -------------------*/
-
-/*------------- dishes start -------------------*/
-.body_dish, .main_recipe {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.nav_dish a, .dish_image a, .nav_recipe a {
+  display: inline-block;
+  color: var(--text-button-color);
+  text-shadow: 0 -1px var(--text-shadow-color);
   text-decoration: none;
-  color:#5c3f3a;
+  user-select: none;
+  outline: none;
+  border: 1px solid var(--border-button-color);
+  border-radius: 6px;
+  background: var(--background-button-color) linear-gradient(var(--border-button-color),
+      var(--background-gradient-color));
+  box-shadow:
+    inset 0 1px var(--button-box-shadow-color-1),
+    inset 0 0 1px var(--button-box-shadow-color-2),
+    0 1px var(--button-box-shadow-color-3),
+    0 0 1px var(--button-box-shadow-color-4);
 }
 
-.main_dish {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.content-button:hover:not(:active),
+.form input[type=submit]:hover:not(:active) {
+  background: linear-gradient(var(--background-button-hover-color-1),
+      var(--background-button-hover-color-2)) var(--background-button-hover-color-1);
 }
 
-.dish_image {
-  background-color: rgb(255, 252, 242);
-  padding: 15px;
-  border: 1px solid  rgb(204, 180, 147);
-  border-radius: 10px;
-  text-align: center;
-  margin: 5px;
+.content-button:active,
+.form input[type=submit]:active {
+  top: 1px;
+  background: linear-gradient(var(--background-button-active-color-1),
+      var(--background-button-active-color-2)) var(--background-button-active-color-1);
+  box-shadow:
+    0 0 1px var(--button-active-box-shadow-color-1) inset,
+    0 2px 3px var(--button-active-box-shadow-color-1) inset,
+    0 1px 1px var(--button-active-box-shadow-color-2);
 }
-
-.dish_image a {
-  font-size: 0.8rem;
-}
-
-.dish_image img {
-  margin-top: 5px;
-}
-
-.dish_image img:hover {
-  opacity: 0.7;
-}
-
-.name {
-  text-align: center;
- }
-
-.dish_title {
-  margin: 10px 20px 5px 20px;
-  background-color:rgb(253, 239, 218);
-  border-bottom: 1px solid rgb(204, 180, 147);
-  border-radius: 3px; 
-}
-
-.dish_title a {
-  text-decoration: none;
-  color:#be290e;
-  font: 1em/1.5 Arial, Verdana, Tahoma, sans-serif;
-}
-
-.dish_title a:hover {
-  color:#ff4726;
-}
- 
-.nav_dish, .footer_recipe, .nav_recipe {
-  display: flex;
-  justify-content: space-between;
-  margin: 50px 30px 30px;
-}
-/*------------- dishes end -------------------*/
-
-/*------------- recipe start -------------------*/
-.body_recipe {
-  display: grid;
-  grid-template-rows: 80px 100px auto 170px;
-  grid-template-areas: "title"
-                       "nav"
-                       "main"
-                       "footer";                 
-}
-
-.main_recipe {
-  display: grid;
-  grid-template-columns: 2fr, auto;
-  grid-template-areas: "article section";  
-  grid-gap: 40px;
-}
-
-.h_recipe {
-  text-align: center;
-}
-  
-.table_recipe {
-  text-align: left;
-}
-
-.footer_recipe a {
-  text-decoration: none;
-  color: #c21e34;
-}
-
-/*------------- recipe end -------------------*/

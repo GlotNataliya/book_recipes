@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   resources :contents do
-    resources :dishes do
-      resource :recipe
-    end
+    resources :dishes
   end
-  
-  root 'contents#index'
+
+  root "contents#index"
 end

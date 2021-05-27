@@ -1,26 +1,27 @@
+# frozen_string_literal: true
+
 class DishesController < ApplicationController
   before_action :find_content
-  before_action :find_dish, only: [:show, :edit, :update, :destroy]
+  before_action :find_dish, only: %i[show edit update destroy]
 
-  def show
+  def index
+    redirect_to content_path(@content)
   end
+
+  def show; end
 
   def new
     @dish = @content.dishes.build
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @dish = @content.dishes.build(dish_params)
-    
     if @dish.save
-      flash[:notice] = "Dish has been created."
       redirect_to content_path(@content)
     else
-      flash[:alert] = "Dish has not been created."
-      render :new 
+      render :new
     end
   end
 
@@ -37,8 +38,9 @@ class DishesController < ApplicationController
   end
 
   private
+
   def dish_params
-    params.require(:dish).permit( :title, :image )
+    params.require(:dish).permit(:title, :image, :ingredients, :cooking_method)
   end
 
   def find_content
@@ -48,5 +50,4 @@ class DishesController < ApplicationController
   def find_dish
     @dish = @content.dishes.find(params[:id])
   end
-
 end

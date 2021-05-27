@@ -1,6 +1,115 @@
 // Place all the styles related to the Dishes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.dish-content,
+.recipe-content {
+  height: auto;
+}
 
+.dish-content,
+.recipe-main {
+  margin: 8px 40px;
+}
 
+.callback_link {
+  font-size: 1.5em;
+}
 
+.dish-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.dish-image,
+.dish-image_link {
+  background-color: var(--background-image-color);
+  padding: 15px;
+  border: 1px solid var(--border-image-color);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.dish-image a {
+  font-size: 1rem;
+}
+
+.dish-image img {
+  margin-top: 5px;
+}
+
+.dish-image img:hover {
+  opacity: 0.7;
+}
+
+.dish-name {
+  margin: 10px 20px 5px;
+  background-color: var(--background-image-name-color);
+  border-bottom: 1px solid var(--border-image-name-color);
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.dish-name a {
+  text-decoration: none;
+  color: var(--a-color);
+  font-size: 1.1em;
+}
+
+.dish-name a:hover {
+  color: var(--a-hover-color);
+}
+
+.dish-nav,
+.recipe-footer,
+.recipe-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 30px 30px;
+}
+
+/* recipe */
+.recipe-content {
+  display: grid;
+  grid-template-rows: 80px 120px auto 170px;
+  grid-template-areas: "title"
+    "nav"
+    "main"
+    "footer";
+  margin: 8px 40px;
+}
+
+.recipe-main {
+  display: grid;
+  grid-template-areas: "article section";
+  grid-template-columns: 50% auto;
+  grid-gap: 30px;
+}
+
+.recipe-h {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.recipe-table {
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: normal;
+  line-height: 42px;
+  padding-left: 20%;
+}
+
+.recipe-text {
+  font-size: 1.5em;
+  text-indent: 1.5em;
+}
+
+.recipe-footer a {
+  text-decoration: none;
+  color: var(--a-color);
+}
+
+.recipe-hr {
+  width: 60%;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}

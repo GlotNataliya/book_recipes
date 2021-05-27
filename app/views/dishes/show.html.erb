@@ -1,30 +1,23 @@
-<body class = "body_recipe">
+<body class="recipe-content">
 
-<h2><%= @dish.title %></h2>
-<nav class = "nav_recipe">
-<%= link_to 'Назад', content_path(@content) %>
-<%= link_to "Новый рецепт", new_content_dish_recipe_path(@content, @dish, @dish.recipe) %>
-</nav>
-<main class = "main_recipe">
-<% if @dish.recipe != nil %>
-<article class = "article_recipe">
-<h3 class = "h_recipe">Ингредиенты</h3>
-<hr>
-<table class = "table_recipe">
-  <tr>
-    <th><%= sanitize @dish.recipe.ingredients.gsub(",", "<br>") %></th>
-  </tr>
-</table>
-</article>
-<section class = "section_recipe">
-<h3 class = "h_recipe">Инструкция приготовления</h3>
-<hr>
-<%= @dish.recipe.cooking_method %>
-</section>
-<% end %>
-</main>
-<footer class = "footer_recipe">
-<%= link_to 'Исправить', edit_content_dish_recipe_path(@content, @dish, @dish.recipe) %>
-<%= link_to 'Удалить', content_dish_recipe_path(@content, @dish, @dish.recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
-</footer>
+  <h2 class="recipe-title"><%= @dish.title %></h2>
+  <nav class="recipe-nav">
+    <%= link_to '<< Назад', content_path(@content), class: "callback_link" %>
+  </nav>
+  <main class="recipe-main">
+    <article class="recipe-article">
+      <h3 class="recipe-h">Ингредиенты</h3>
+      <hr class="recipe-hr">
+      <table class="recipe-table">
+        <tr>
+          <td><%= sanitize @dish.ingredients.gsub(",", "<br>") %></td>
+        </tr>
+      </table>
+    </article>
+    <section class="recipe-section">
+      <h3 class="recipe-h">Инструкция приготовления</h3>
+      <hr>
+      <p class="recipe-text"><%= @dish.cooking_method %></p>
+    </section>
+  </main>
 </body>

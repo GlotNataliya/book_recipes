@@ -1,12 +1,11 @@
-<div class = "form">
-<%= form_with model: @content do |f| %>
-<p>
-    <%= f.label :Название %>:
-    <%= f.text_field :title, placeholder: "текст", autofocus: true %>
-</p>
-<p>
-    <%= f.submit %>
-</p>
-<% end %>
+<div class="form">
+  <%= form_with model: @content do |f| %>
+  <p>
+    <%= f.label :Название, class: "form-name" %>:
+    <%= f.text_field :title, autofocus: true, required: true %>
+  </p>
+  <p>
+    <%= f.submit "Сохранить" %>
+  </p>
+  <% end %>
 </div>
-

@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+:root {
+  --background-color: #f8eeee;
+  --background-image: url(girl_photo.jpg);
+  --text-color: #5e656b;
+  --table-color: #454c53;
+  --table-hover-color: #c0604f;
+  --border-color: #ccc;
+  --text-button-color: rgb(205, 216, 228);
+  --text-shadow-color: rgb(46, 53, 58);
+  --border-button-color: rgba(33, 43, 52, 1);
+  --background-button-color: rgb(81, 92, 102);
+  --background-gradient-color: rgb(69, 78, 87);
+  --button-box-shadow-color-1: rgba(101, 114, 126, 1);
+  --button-box-shadow-color-2: rgba(140, 150, 170, .8);
+  --button-box-shadow-color-3: rgb(83, 94, 104);
+  --button-box-shadow-color-4: rgb(86, 96, 106);
+  --background-button-hover-color-1: rgb(126, 126, 134);
+  --background-button-hover-color-2: rgb(70, 71, 76);
+  --background-button-active-color-1: rgb(76, 77, 82);
+  --background-button-active-color-2: rgb(56, 57, 62);
+  --button-active-box-shadow-color-1: rgba(0, 0, 0, .5);
+  --button-active-box-shadow-color-2: rgba(255, 255, 255, .1);
+  --background-image-color: rgb(255, 252, 242);
+  --border-image-color: rgb(204, 180, 147);
+  --background-image-name-color: rgb(253, 239, 218);
+  --border-image-name-color: rgb(204, 180, 147);
+  --a-hover-color: #ff4726;
+  --a-color: #be290e;
+  --border-color: rgba(0, 0, 0, .12);
+  --form-field-color: #f7e7e7;
+  --form-text-border-color: #fdc2c2;
+  --background-field-color: #ffcccc;
+}
+
+html {
+  background: var(--background-color);
+  font-family: Roboto, sans-serif, Georgia, 'Times New Roman', Times, serif, Arial, Verdana, Tahoma;
+}

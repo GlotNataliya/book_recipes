@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_01_11_110033) do
   create_table "dishes", force: :cascade do |t|
     t.string "title"
     t.string "image"
+    t.string "ingredients"
+    t.string "cooking_method"
     t.integer "content_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -31,20 +33,5 @@ ActiveRecord::Schema.define(version: 2021_01_11_110033) do
     t.index ["content_id"], name: "index_dishes_on_content_id"
   end
 
-  create_table "recipes", force: :cascade do |t|
-    t.string "title"
-    t.text "ingredients"
-    t.text "cooking_method"
-    t.integer "dish_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
-    t.index ["dish_id"], name: "index_recipes_on_dish_id"
-  end
-
   add_foreign_key "dishes", "contents"
-  add_foreign_key "recipes", "dishes"
 end

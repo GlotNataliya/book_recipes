@@ -1,17 +1,26 @@
-<div class = "form">
+<div class="form">
   <%= form_with model: [@content, @dish], html: { multipart: true }, local: true do |f| %>
-    <p>
-      <%= f.label :Название %>:
-      <%= f.text_field :title, placeholder: "текст", autofocus: true %>
-    </p>
-    <p>
+  <p>
+    <%= f.label :Название, class: "form-name" %>:
+    <%= f.text_field :title, autofocus: true, required: true %>
+  </p>
+  <label class="form-field">
+    Выбрать фото
+    <span style="display:none;">
       <%= f.file_field :image %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
+    </span>
+  </label>
+  <p>
+    <%= f.label :Ингредиенты, class: "form-name" %>:<br>
+    <%= f.text_area :ingredients, cols: 50, rows: 6, autofocus: true, required: true, class: "form-text" %>
+  </p>
+  <p>
+    <%= f.label :Инструкция_приготовления, class: "form-name" %>:<br>
+    <%= f.text_area :cooking_method, cols: 50, rows: 6, required: true, class: "form-text" %>
+  </p>
+  <p>
+    <%= f.submit "Сохранить рецепт" %>
+  </p>
   <% end %>
+  <%= render 'shared/errors', object: @dish %>
 </div>
-
-
-

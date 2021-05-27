@@ -1,8 +1,15 @@
+# frozen_string_literal: true
+
 class Dish < ApplicationRecord
-  belongs_to :content #, optional: true
-  has_one :recipe, inverse_of: :dish, autosave: true, dependent: :destroy #, required: false , primary_key: :dish_id
-  accepts_nested_attributes_for :recipe, allow_destroy: true #,  reject_if: :all_blank  #update_only: true
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>", original: "250x250#" }
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/ 
-  validates_attachment :image, presence: true, content_type: { content_type: "image/jpeg" }, size: { in: 0..200.kilobytes }
+  belongs_to :content 
+
+  validates :title, presence: true
+  validates :ingredients, presence: true
+  validates :cooking_method, presence: true
+  
+  has_attached_file :image, styles: { original: '250x250#' }, default_url: "/images/:style/ovsyanka.jpg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/, size: { less_than: 1.megabyte }
+  validates_attachment :image, presence: true
+  validates_attachment_file_name :image, matches: [/png\z/, /jpe?g\z/]
+  do_not_validate_attachment_file_type :image
 end

@@ -1,25 +1,15 @@
-# README
+# Book of recipes  ![Body](https://github.com/GlotNataliya/book_recipes/blob/main/app/assets/images/book_of_recipes.png?raw=true)
+### The book of recipes -  an easy-to-use program for adding and saving your own recipes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+The program is written in the Ruby on Rails framework.
+Before you install Rails, you should check to make sure that your system has the proper prerequisites installed. </br> These include:
 
-* Ruby version
+* Ruby
+* SQLite3
+* Node.js
+* Yarn
 
-* System dependencies
+![Body](https://github.com/GlotNataliya/book_recipes/blob/main/app/assets/images/code.png?raw=true)
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# book_recipes

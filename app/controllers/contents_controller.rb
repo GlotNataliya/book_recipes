@@ -4,11 +4,11 @@ class ContentsController < ApplicationController
   before_action :current_content, only: %i[show edit update destroy]
 
   def index
-    @contents = if params[:sort_by] == "title"
-        Content.order(:title)
-      else
-        Content.all
-      end
+    @contents = if params[:sort_by] == 'title'
+                  Content.order(:title)
+                else
+                  Content.all
+                end
   end
 
   def show; end

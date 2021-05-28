@@ -18,11 +18,10 @@ Before you install Rails, you should check to make sure that your system has the
 
 ![Body](https://github.com/GlotNataliya/book_recipes/blob/main/app/assets/images/code.png?raw=true)
 
-### Then clone the application:
-$ git clone [https://github.com/GlotNataliya/book_recipes.git](https://github.com/GlotNataliya/book_recipes.git) 
-</br>
 
-![Animation](https://github.com/GlotNataliya/book_recipes/blob/main/app/assets/images/book-recipes.gif)
+<p align="center">
+  <img src="https://github.com/GlotNataliya/book_recipes/blob/main/app/assets/images/book-recipes.gif" />
+</p>
 
 #### You can add your own dishes categories
 

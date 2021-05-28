@@ -1,4 +1,8 @@
-# Book of recipes  ![Body](https://github.com/GlotNataliya/book_recipes/blob/main/app/assets/images/book_of_recipes.png?raw=true)
+
+<p align="center">
+  <img src="https://github.com/GlotNataliya/book_recipes/blob/main/app/assets/images/book_of_recipes.png?raw=true" />
+</p> 
+
 ### The book of recipes -  an easy-to-use program for adding and saving your own recipes
 
 

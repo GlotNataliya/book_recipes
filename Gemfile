@@ -35,6 +35,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 5.0.0', '>= 5.0.0'
 end
 
 group :development do
@@ -44,6 +45,7 @@ group :development do
   gem 'rubocop-packaging', '~> 0.5.1'
   gem 'rubocop-performance', '~> 1.9', '>= 1.9.2'
   gem 'rubocop-rails', '~> 2.9', '>= 2.9.1', require: false
+  gem 'rubocop-rspec', '~> 2.3', '>= 2.3.0', require: false
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -55,7 +57,20 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
+  gem 'faker', '~> 2.18', '>= 2.18.0'
+  # factory_bot_rails provides integration between factory_bot and rails
+  gem 'factory_bot_rails', '~> 6.2', '>= 6.2.0'
+  # Extracting `assigns` and `assert_template` from ActionDispatch
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+  # Making tests easy on the fingers and eyes
+  gem 'shoulda', '~> 4.0', '>= 4.0.0'
+  # Making callback tests easy on the fingers and eyes
+  gem 'shoulda-callback-matchers', '~> 1.1', '>= 1.1.4'
+  # Automatic merging of coverage across test suites
   gem 'selenium-webdriver'
+  gem 'simplecov', '~> 0.21', '>= 0.21.2', require: false
+
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end

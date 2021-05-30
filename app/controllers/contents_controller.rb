@@ -29,9 +29,11 @@ class ContentsController < ApplicationController
   def edit; end
 
   def update
-    @content.update(content_params)
-
-    redirect_to :root
+    if @content.update(content_params)
+      redirect_to :root
+    else
+      render :edit
+    end
   end
 
   def destroy

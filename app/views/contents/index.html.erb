@@ -11,7 +11,7 @@
     <table class="content-table">
       <% @contents.each do |content| %>
       <tr>
-        <td class="content-table-title"><%= link_to content.title, [content], class: "content-name" %></td>
+        <td class="content-name"><%= link_to content.title, [content] %></td>
         <td><%= button_to 'Править', [:edit, content], method: 'get', class: 'content-button' %></td>
         <td>
           <%= button_to 'Удалить', [content], method: 'delete', data: { confirm: 'Вы уверены, что хотите удалить этот элемент?'}, class: 'content-button' %>

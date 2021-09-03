@@ -7,7 +7,7 @@ class Dish < ApplicationRecord
   validates :ingredients, presence: true
   validates :cooking_method, presence: true
 
-  has_attached_file :image, styles: { original: '250x250#' }, default_url: '/images/:style/ovsyanka.jpg'
+  has_attached_file :image, styles: { original: '250x250#' }, default_url: '/images/000/000/001/original/missing.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\z}, size: { less_than: 1.megabyte }
   validates_attachment :image, presence: true
   validates_attachment_file_name :image, matches: [/png\z/, /jpe?g\z/]

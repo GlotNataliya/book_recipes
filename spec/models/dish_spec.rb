@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe Dish, type: :model do
   before(:all) do
     dish_params = { title: 'Borodino bread',
-                    image: 'new-dish.png',
+                    image: 'public/system/dishes/images/original/missing.png',
                     ingredients: 'water, yeast, flour',
                     cooking_method: 'mix everything' }
     @content = Content.create(title: 'Bread')

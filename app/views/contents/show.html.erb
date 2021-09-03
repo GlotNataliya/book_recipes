@@ -7,7 +7,7 @@
   <main class="dish-main">
     <% @content.dishes.each do |dish| %>
     <figure class="dish-image">
-      <%= link_to(image_tag( dish.image.url, class: "dish-image_link"), content_dish_path(@content, dish)) if dish.image.exists? %></br>
+      <%= link_to(image_tag(dish.image.url, class: "dish-image_link"), content_dish_path(@content, dish)) if dish.image.exists? %></br>
       <%= link_to 'Исправить', edit_content_dish_path(@content, dish) %> |
       <%= link_to 'Удалить', content_dish_path(@content, dish), method: :delete, data: { confirm: 'Are you sure?' } %>
       <figcaption class="dish-name">

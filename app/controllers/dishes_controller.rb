@@ -27,6 +27,7 @@ class DishesController < ApplicationController
 
   def update
     if @dish.update(dish_params)
+
       redirect_to content_path(@content)
     else
       render :edit
